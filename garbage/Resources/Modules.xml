@@ -124,7 +124,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="drive-encryption">
+    <Module name="ModuleDriveEncryption">
         <Name>Drive Encryption</Name>
         <Priority>3</Priority>
         <Details>
@@ -146,7 +146,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="home-network-encryption">
+    <Module name="ModuleHomeNetworkEncryption">
         <Name>Primary Network Encryption</Name>
         <Priority>2</Priority>
         <Details>
@@ -169,7 +169,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="backups">
+    <Module name="ModuleBackups">
         <Name>Backup</Name>
         <Priority>2</Priority>
         <Details>
@@ -190,7 +190,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="UAC">
+    <Module name="ModuleUAC">
         <Name>User Account Control Settings</Name>
         <Priority>3</Priority>
         <Details>
@@ -220,32 +220,24 @@
         </NextSteps>
     </Module>
 
-    <Module name="Autorun">
-        <Name>User Account Control Settings</Name>
-        <Priority>3</Priority>
+    <Module name="ModuleAutorun">
+        <Name>Autorun</Name>
+        <Priority>2</Priority>
         <Details>
-            Windows has a built-in technology called User Account Control (UAC), which prevents unauthorized changes to
-            your computer by requiring an admin password before makes changes above a certain impact threshold.
+            Autorun is a feature in Windows which allows for devices that you plug into your computer to automatically
+            open and execute files. This opens up many vulnerabilities that people with malacious intent may exploit.
         </Details>
         <NextSteps>
-            <Step result="never-notify" score="0">
-                With UAC disabled, applications don't need to be authorized in order to make changes to your computer
-                such as modifying files on your drive. This setting is not recommended unless you are using it intently.
-                <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
-                    Here's how you could change your UAC setting to a safer one.</a>
+            <Step result="autorun-on" score="0">
+                With Autorun turned on, your computer may be at risk to malacious external media which use Autorun to
+                automatically run commands which infect your system. You could protect your computer using
+                <a href="http://thetechhacker.com/2016/03/20/how-to-disable-the-autorun-feature-in-windows-10/">
+                    this tutorial.</a>
             </Step>
 
-            <Step result="sometimes-notify" score="50">
-                Your UAC setting provides maximum security for any changes which apps try to make on your computer.
-                However, the highest UAC level also asks for confirmation whenever you try to make changes to windows
-                settings. This is a great safety feature to prevent you from accidentally making dangerous changes to
-                Windows. <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
-                You could turn this feature on follow this guide.</a>
-            </Step>
-
-            <Step result="always-notify" score="100">
-                You have the highest level of protection for Windows. You will be asked to confirm before any
-                significant changes to Windows occur.
+            <Step result="autorun-off" score="100">
+                The Autorun feature is turned off on your computer! This protects you when you are connecting external
+                media to your computer.
             </Step>
         </NextSteps>
     </Module>
