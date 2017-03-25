@@ -1,22 +1,223 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Modules>
-  <Module name="ModuleWindowsUpdateEnabled">
-    <Name>Windows Updates</Name>
-    <Priority>1</Priority>
-    <Details>
-		Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest vulnerabilities. 
-		When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered in the form of updates 
-		to secure your system against these vulnerabilities. When updates are disabled, you do not receive this patches.
-	</Details>
-    <NextSteps>
-      <Step result="disabled" score="0">
-        Your Windows Updates are disabled, leaving your system vulnerable to the latest unpatched vulnerabilities. 
-        Consider <a href="https://support.microsoft.com/en-us/help/901037/how-to-enable-and-to-disable-microsoft-update">re-enabling</a> 
-        your Windows Updates to receive security patches in the future.
-      </Step>
-      <Step result="enabled" score="100">
-        Your Windows Updates are already enabled, there's nothing to fix here.
-      </Step>
-    </NextSteps>
-  </Module>
+    <Module name="ModuleWindowsUpdateEnabled">
+        <Name>Windows Updates</Name>
+        <Priority>1</Priority>
+        <Details>
+            Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest
+            vulnerabilities.
+            When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered
+            in the form of updates
+            to secure your system against these vulnerabilities. When updates are disabled, you do not receive this
+            patches.
+        </Details>
+        <NextSteps>
+            <Step result="disabled" score="0">
+                Your Windows Updates are disabled, leaving your system vulnerable to the latest unpatched
+                vulnerabilities.
+                Consider
+                <a href="https://support.microsoft.com/en-us/help/901037/how-to-enable-and-to-disable-microsoft-update">
+                    re-enabling
+                </a>
+                your Windows Updates to receive security patches in the future.
+            </Step>
+            <Step result="enabled" score="100">
+                Your Windows Updates are already enabled, there's nothing to fix here.
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="ModuleWindowsUpdateEnabled">
+        <Name>Windows Updates</Name>
+        <Priority>1</Priority>
+        <Details>
+            Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest
+            vulnerabilities.
+            When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered
+            in the form of updates
+            to secure your system against these vulnerabilities. When updates are disabled, you do not receive this
+            patches.
+        </Details>
+        <NextSteps>
+            <Step result="disabled" score="0">
+                Your Windows Updates are disabled, leaving your system vulnerable to the latest unpatched
+                vulnerabilities.
+                Consider
+                <a href="https://support.microsoft.com/en-us/help/901037/how-to-enable-and-to-disable-microsoft-update">
+                    re-enabling
+                </a>
+                your Windows Updates to receive security patches in the future.
+            </Step>
+            <Step result="enabled" score="100">
+                Your Windows Updates are already enabled, there's nothing to fix here.
+            </Step>
+        </NextSteps>
+    </Module>
+
+
+    <Module name="ModulePasswordStorage">
+        <Name>Safe Password Storage</Name>
+        <Priority>3</Priority>
+        <Details>
+        </Details>
+        <NextSteps>
+            <Step result="in-browser" score="0">
+                Gordon Guan created a utility that steals all passwords that are saved using your browsers built-in
+                password manager. Third-party password managers such as
+                <a href="https://www.lastpass.com">LastPass</a>
+                or
+                <a href="http://keepass.info/">KeePass</a>
+                offer better encryption and protection from such attacks.
+            </Step>
+            <Step result="not-disabled" score="100">
+                Your Windows Updates are already enabled, there's nothing to fix here.
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="Antivirus">
+        <Name>Antivirus Software</Name>
+        <Priority>1</Priority>
+        <Details>
+            With our world becoming increasingly technologically advanced, the online threats we are facing are becoming
+            more intelligent everyday. With such advanced software trying to steal our data, we need to make sure we are
+            up to speed with the latest security advancements.
+        </Details>
+        <NextSteps>
+            <Step result="no-antivirus" score="0">
+                You have no antivirus software activated on your computer. With online threats being extremely difficult
+                to detect for even the most experienced computer users, you are putting your computer in extreme danger.
+                We recommend installing a free antivirus such as
+                <a href="http://www.avg.com/us-en/homepage">AVG</a> because it stays up to date with the latest threats
+                affecting your computer.
+            </Step>
+
+            <Step result="windows-defender" score="50">
+                While you have Windows Defender activated, we recommend installing a free antivirus such as
+                <a href="http://www.avg.com/us-en/homepage">AVG</a> because it stays up to date with the latest threats
+                affecting your computer.
+            </Step>
+
+            <Step result="antivirus-activated" score="100">
+                You have an active, up-to-date antivirus software, great!
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="Firewall">
+        <Name>Firewall</Name>
+        <Priority>1</Priority>
+        <Details>
+            Firewalls allow you to communicate on the web while preventing intruders from accessing your data. Microsoft
+            recommends that you "shouldn't turn off Windows Firewall unless you have another firewall turned on".
+        </Details>
+        <NextSteps>
+            <Step result="firewall-off" score="0">
+                You have no active firewall on your computer! This is extremely dangerous and may lead to unauthorized
+                access on your personal information from external users. We recommend that you turn your firewall on
+                immediately! <a href="https://support.microsoft.com/en-us/instantanswers/c9955ad9-1239-4cb2-988c-
+                982f851617ed/turn-windows-firewall-on-or-off">Here's how to do it.</a>
+            </Step>
+            <Step result="firewall-on" score="100">
+                Your firewall is active and you are being protected from unauthorized access to your data!
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="drive-encryption">
+        <Name>Drive Encryption</Name>
+        <Priority>3</Priority>
+        <Details>
+            Encrypting your drive protects your data in the case of your device being stolen or your data storage
+            location being compromised. When you encrypt your drive, you prevent anyone from accessing any file on it,
+            unless they know the password which you encrypted it with.
+        </Details>
+        <NextSteps>
+            <Step result="not-encrypted" score="0">
+                While encrypting your hard drive provides countless improvements to the safety of your sensitive data,
+                it is not for everyone. Before embarking on your encryption journey, read through a tutorial which walks
+                you through the process.
+                <a href="http://lifehacker.com/a-beginners-guide-to-encryption-what-it-is-and-how-to-1508196946">
+                    Here's a good one.</a>
+            </Step>
+            <Step result="encrypted" score="100">
+                Your OS drive is encrypted. This means your data is safe in the case of a hardware compromise.
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="home-network-encryption">
+        <Name>Primary Network Encryption</Name>
+        <Priority>2</Priority>
+        <Details>
+            Windows has a built-in manager for different types of networks. This is why when you connect to a new
+            network in Windows, it asks you to classify it as a "Home", "Work" or "Public" network. As Windows uses
+            relaxed data sharing and security settings when you set a network as a "Home Network", it is imperative
+            that these networks are well-secured.
+        </Details>
+        <NextSteps>
+            <Step result="not-protected" score="0">
+                Your primary network is not encrypted and password protected. Both of these are extremely important to
+                ensuring safe transfer of data over your network. We recommend creating and using a more secure network
+                as your primary connection.
+                <a href="http://www.pcmag.com/article2/0,2817,2375207,00.asp">
+                    Here's a guide to help you out!</a>
+            </Step>
+            <Step result="protected" score="100">
+                Your primary network is using modern encryption and is password protected. Here's to a safe internet!
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="backups">
+        <Name>Backup</Name>
+        <Priority>2</Priority>
+        <Details>
+            You have a lot of important data, like your photos and documents, much of which you can't live without.
+            That's why it's imperative that you make backups of this data.
+        </Details>
+        <NextSteps>
+            <Step result="backup-not-set" score="0">
+                In the case of a drive failiure, data breach, or accidental deletion, you have no way to get your data
+                back. We recommend creating a continuous backup schedule onto an external drive using Windows built-in
+                tools. <a href="http://www.pcmag.com/article2/0,2817,2375207,00.asp">
+                    Here's a step-by-step walk-through.</a>
+            </Step>
+            <Step result="backup-set" score="100">
+                Your data is successfully being backed up onto an external drive. However, you still have to make sure
+                the external drive is in a safe location and has it's own defence against external threats.
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="UAC">
+        <Name>User Account Control Settings</Name>
+        <Priority>3</Priority>
+        <Details>
+            Windows has a built-in technology called User Account Control (UAC), which prevents unauthorized changes to
+            your computer by requiring an admin password before makes changes above a certain impact threshold.
+        </Details>
+        <NextSteps>
+            <Step result="never-notify" score="0">
+                With UAC disabled, applications don't need to be authorized in order to make changes to your computer
+                such as modifying files on your drive. This setting is not recommended unless you are using it intently.
+                <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
+                    Here's how you could change your UAC setting to a safer one.</a>
+            </Step>
+
+            <Step result="sometimes-notify" score="50">
+                Your UAC setting provides maximum security for any changes which apps try to make on your computer.
+                However, the highest UAC level also asks for confirmation whenever you try to make changes to windows
+                settings. This is a great safety feature to prevent you from accidentally making dangerous changes to
+                Windows. <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
+                    You could turn this feature on follow this guide.</a>
+            </Step>
+
+            <Step result="always-notify" score="100">
+                You have the highest level of protection for Windows. You will be asked to confirm before any
+                significant changes to Windows occur.
+            </Step>
+        </NextSteps>
+    </Module>
+
 </Modules>
