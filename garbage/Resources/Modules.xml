@@ -75,7 +75,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="Antivirus">
+    <Module name="ModuleAntivirusInstalled">
         <Name>Antivirus Software</Name>
         <Priority>1</Priority>
         <Details>
@@ -220,4 +220,33 @@
         </NextSteps>
     </Module>
 
+    <Module name="Autorun">
+        <Name>User Account Control Settings</Name>
+        <Priority>3</Priority>
+        <Details>
+            Windows has a built-in technology called User Account Control (UAC), which prevents unauthorized changes to
+            your computer by requiring an admin password before makes changes above a certain impact threshold.
+        </Details>
+        <NextSteps>
+            <Step result="never-notify" score="0">
+                With UAC disabled, applications don't need to be authorized in order to make changes to your computer
+                such as modifying files on your drive. This setting is not recommended unless you are using it intently.
+                <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
+                    Here's how you could change your UAC setting to a safer one.</a>
+            </Step>
+
+            <Step result="sometimes-notify" score="50">
+                Your UAC setting provides maximum security for any changes which apps try to make on your computer.
+                However, the highest UAC level also asks for confirmation whenever you try to make changes to windows
+                settings. This is a great safety feature to prevent you from accidentally making dangerous changes to
+                Windows. <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
+                You could turn this feature on follow this guide.</a>
+            </Step>
+
+            <Step result="always-notify" score="100">
+                You have the highest level of protection for Windows. You will be asked to confirm before any
+                significant changes to Windows occur.
+            </Step>
+        </NextSteps>
+    </Module>
 </Modules>
