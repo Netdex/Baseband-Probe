@@ -13,11 +13,10 @@ namespace BasebandProbe.Module.Impl
 
         protected override string AssessModule()
         {
-            //WUApiLib.AutomaticUpdatesClass auc = new WUApiLib.AutomaticUpdatesClass();
-            //if (auc.ServiceEnabled)
-            //    return "enabled";
-            //else return "disabled";
-            return "enabled";
+            WUApiLib.AutomaticUpdatesClass auc = new WUApiLib.AutomaticUpdatesClass();
+            if (auc.ServiceEnabled)
+                return "enabled";
+            else return "disabled";
         }
     }
 }
