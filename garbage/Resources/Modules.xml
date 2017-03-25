@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+  <Module name="ModuleWindowsUpdateEnabled">
+    <Name>Windows Updates</Name>
+    <Priority>1</Priority>
+    <Details>
+		Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest vulnerabilities. 
+		When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered in the form of updates 
+		to secure your system against these vulnerabilities. When updates are disabled, you do not receive this patches.
+	</Details>
+    <NextSteps>
+      <Step result="disabled" score="0">
+        Your Windows Updates are disabled, leaving your system vulnerable to the latest unpatched vulnerabilities. 
+        Consider <a href="https://support.microsoft.com/en-us/help/901037/how-to-enable-and-to-disable-microsoft-update">re-enabling</a> 
+        your Windows Updates to receive security patches in the future.
+      </Step>
+      <Step result="enabled" score="100">
+        Your Windows Updates are already enabled, there's nothing to fix here.
+      </Step>
+    </NextSteps>
+  </Module>
+</Modules>
