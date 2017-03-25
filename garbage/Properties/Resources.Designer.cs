@@ -64,7 +64,7 @@ namespace BasebandProbe.Properties {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Categories&gt;
         ///  &lt;Category name=&quot;CategoryVulnerablePlugins&quot;&gt;
-        ///    &lt;Name&gt;&lt;/Name&gt;
+        ///    &lt;Name&gt;Yay&lt;/Name&gt;
         ///  &lt;/Category&gt;
         ///  &lt;Category name=&quot;CategorySecurityPolicies&quot;&gt;
         ///    

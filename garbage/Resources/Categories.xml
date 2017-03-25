@@ -4,9 +4,9 @@
     <Name>Yay</Name>
   </Category>
   <Category name="CategorySecurityPolicies">
-    
+    <Name>Yay</Name>
   </Category>
   <Category name="CategoryVulnerableBrowsers">
-    
+    <Name>Yay</Name>
   </Category>
 </Categories>
