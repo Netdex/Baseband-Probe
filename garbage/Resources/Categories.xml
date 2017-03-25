@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Categories>
+  <Category name="CategoryVulnerablePlugins">
+    <Name>Yay</Name>
+  </Category>
+  <Category name="CategorySecurityPolicies">
+    
+  </Category>
+  <Category name="CategoryVulnerableBrowsers">
+    
+  </Category>
+</Categories>

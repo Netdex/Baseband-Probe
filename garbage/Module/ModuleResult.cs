@@ -13,6 +13,6 @@ namespace BasebandProbe.Module
         public int Priority { get; set; }
         public decimal Score { get; set; }
         public string NextSteps { get; set; }
-
+        public string Category { get; set; }
     }
 }

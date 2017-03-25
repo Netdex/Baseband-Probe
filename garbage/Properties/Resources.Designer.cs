@@ -62,6 +62,26 @@ namespace BasebandProbe.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;Categories&gt;
+        ///  &lt;Category name=&quot;CategoryVulnerablePlugins&quot;&gt;
+        ///    &lt;Name&gt;&lt;/Name&gt;
+        ///  &lt;/Category&gt;
+        ///  &lt;Category name=&quot;CategorySecurityPolicies&quot;&gt;
+        ///    
+        ///  &lt;/Category&gt;
+        ///  &lt;Category name=&quot;CategoryVulnerableBrowsers&quot;&gt;
+        ///    
+        ///  &lt;/Category&gt;
+        ///&lt;/Categories&gt;.
+        /// </summary>
+        internal static string Categories {
+            get {
+                return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Modules&gt;
         ///  &lt;Module name=&quot;ModuleWindowsUpdateEnabled&quot;&gt;
         ///    &lt;Name&gt;Windows Updates&lt;/Name&gt;

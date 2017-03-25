@@ -21,7 +21,8 @@ namespace BasebandProbe.Module
             var moduleNameText = node.Attributes["name"];
             var priorityText = node.SelectSingleNode("./Priority");
             var scoreText = nextStepsText.Attributes["score"];
-
+            var categoryText = node.SelectSingleNode("./Category");
+            
             if (nextStepsText == null || detailsText == null || moduleNameText == null || priorityText == null || scoreText == null)
                 throw new XmlException("XML module definition is malformed");
 
@@ -32,7 +33,8 @@ namespace BasebandProbe.Module
                 NextSteps = nextStepsText.InnerText.Trim(),
                 Priority = int.Parse(priorityText.InnerText.Trim()),
                 Assessment = assessment,
-                Score = decimal.Parse(scoreText.InnerText.Trim())
+                Score = decimal.Parse(scoreText.InnerText.Trim()),
+                Category = categoryText?.InnerText
             };
         }
 

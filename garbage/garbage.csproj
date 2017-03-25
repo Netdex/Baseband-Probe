@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\CategoryInformation.cs" />
+    <Compile Include="Category\CategoryResult.cs" />
+    <Compile Include="Category\ICategory.cs" />
     <Compile Include="Module\IModule.cs" />
     <Compile Include="Module\Impl\ModuleWindowsUpdateEnabled.cs" />
     <Compile Include="Module\ModuleInformation.cs" />
@@ -72,6 +75,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Categories.xml" />
     <Content Include="Resources\Modules.xml">
       <SubType>Designer</SubType>
     </Content>
