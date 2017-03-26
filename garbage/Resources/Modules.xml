@@ -222,28 +222,45 @@
         <Name>User Account Control Settings</Name>
         <Priority>3</Priority>
         <Details>
-            Windows has a built-in technology called User Account Control (UAC), which prevents unauthorized changes to
-            your computer by requiring an admin password before makes changes above a certain impact threshold.
+            Autorun is a feature in Windows which allows for devices that you plug into your computer to automatically
+            open and execute files. This opens up many vulnerabilities that people with malicious intent may exploit.
         </Details>
         <NextSteps>
-            <Step result="never-notify" score="0">
-                With UAC disabled, applications don't need to be authorized in order to make changes to your computer
-                such as modifying files on your drive. This setting is not recommended unless you are using it intently.
-                <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
-                    Here's how you could change your UAC setting to a safer one.</a>
+            <Step result="autorun-on" score="0">
+                With Autorun turned on, your computer may be at risk to malicious external media which use Autorun to
+                automatically run commands which infect your system. You could protect your computer using
+                <a href="http://thetechhacker.com/2016/03/20/how-to-disable-the-autorun-feature-in-windows-10/">
+                    this tutorial.</a>
             </Step>
 
-            <Step result="sometimes-notify" score="50">
-                Your UAC setting provides maximum security for any changes which apps try to make on your computer.
-                However, the highest UAC level also asks for confirmation whenever you try to make changes to windows
-                settings. This is a great safety feature to prevent you from accidentally making dangerous changes to
-                Windows. <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
-                You could turn this feature on follow this guide.</a>
+            <Step result="autorun-off" score="100">
+                The Autorun feature is turned off on your computer! This protects you when you are connecting external
+                media to your computer.
+            </Step>
+        </NextSteps>
+    </Module>
+
+    <Module name="ModuleDNSServer">
+        <Name>Using a Secure DNS</Name>
+        <Priority>2</Priority>
+        <Details>
+            Domain Name System (DNS) is the technology that translates urls (such as www.google.com) into their
+            respective IP addresses. Most people just use the DNS provided by their Internet Service Provider (ISP), but
+            there are many third party options as well.
+        </Details>
+        <NextSteps>
+            <Step result="default-dns" score="0">
+                You are using the default DNS. Third-party DNS such as
+                <a href="http://thetechhacker.com/2016/03/20/how-to-disable-the-autorun-feature-in-windows-10/">
+                    Google's Public DNS</a>
+                is always being developed and updated to the latest standards. This almost always results in faster
+                performance, increased security, improved reliability, and additional features such as parental controls
+                compared to your ISP's DNS.
             </Step>
 
-            <Step result="always-notify" score="100">
-                You have the highest level of protection for Windows. You will be asked to confirm before any
-                significant changes to Windows occur.
+            <Step result="third-party-dns" score="100">
+                The Autorun feature is turned off on your computer! This protects you when you are connecting external
+                media to your computer.
             </Step>
         </NextSteps>
     </Module>
