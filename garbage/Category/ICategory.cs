@@ -7,14 +7,14 @@ namespace BasebandProbe.Category
 {
     public class ICategory
     {
-        public static CategoryResult GetCategoryResult(string categoryID)
+        public static ICategoryResult GetCategoryResult(string categoryID)
         {
             var cat = CategoryInformation.GetCategoryXMLNode(categoryID);
             if (cat == null)
                 throw new ArgumentException("Category does not exist!");
             var nameNode = cat.SelectSingleNode("./Name");
             var idNode = cat.Attributes["name"];
-            return new CategoryResult()
+            return new ICategoryResult()
             {
                 Name = nameNode.InnerText,
                 CategoryID = idNode.InnerText

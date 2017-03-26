@@ -58,16 +58,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category\CategoryInformation.cs" />
-    <Compile Include="Category\CategoryResult.cs" />
+    <Compile Include="Category\ICategoryResult.cs" />
     <Compile Include="Category\ICategory.cs" />
     <Compile Include="Module\IModule.cs" />
     <Compile Include="Module\Impl\ModuleAntivirusInstalled.cs" />
+    <Compile Include="Module\Impl\ModuleAutorunDisabled.cs" />
     <Compile Include="Module\Impl\ModuleHomeNetworkEncryption.cs" />
     <Compile Include="Module\Impl\ModuleSecurityPolicyScreenSaver.cs" />
     <Compile Include="Module\Impl\ModuleUACEnabled.cs" />
     <Compile Include="Module\Impl\ModuleWindowsUpdateEnabled.cs" />
     <Compile Include="Module\ModuleInformation.cs" />
-    <Compile Include="Module\ModuleResult.cs" />
+    <Compile Include="Module\IModuleResult.cs" />
     <Compile Include="Native\Win32.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

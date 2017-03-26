@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BasebandProbe.Module
 {
-    public struct ModuleResult
+    public class IModuleResult
     {
         public string Name { get; set; }
         public string Details { get; set; }

@@ -12,13 +12,13 @@ namespace BasebandProbe.Module
             ModuleName = moduleName;
         }
 
-        public ModuleResult GetAssessmentResult()
+        public IModuleResult GetAssessmentResult()
         {
             var node = ModuleInformation.GetModuleXMLNode(ModuleName);
             var assessment = AssessModule();
             var nextStepsText = node.SelectSingleNode($"./NextSteps/Step[@result='{assessment}']");
             var detailsText = node.SelectSingleNode("./Details");
-            var moduleNameText = node.Attributes["name"];
+            var moduleNameText = node.SelectSingleNode("./Name");
             var priorityText = node.SelectSingleNode("./Priority");
             var scoreText = nextStepsText.Attributes["score"];
             var categoryText = node.SelectSingleNode("./Category");
@@ -26,15 +26,15 @@ namespace BasebandProbe.Module
             if (nextStepsText == null || detailsText == null || moduleNameText == null || priorityText == null || scoreText == null)
                 throw new XmlException("XML module definition is malformed");
 
-            return new ModuleResult()
+            return new IModuleResult()
             {
-                Details = detailsText.InnerText.Trim(),
-                Name = moduleNameText.InnerText.Trim(),
-                NextSteps = nextStepsText.InnerText.Trim(),
-                Priority = int.Parse(priorityText.InnerText.Trim()),
+                Details = detailsText.InnerXml.Trim(),
+                Name = moduleNameText.InnerXml.Trim(),
+                NextSteps = nextStepsText.InnerXml.Trim(),
+                Priority = int.Parse(priorityText.InnerXml.Trim()),
                 Assessment = assessment,
-                Score = decimal.Parse(scoreText.InnerText.Trim()),
-                Category = categoryText?.InnerText
+                Score = decimal.Parse(scoreText.InnerXml.Trim()),
+                Category = categoryText?.InnerXml
             };
         }
 

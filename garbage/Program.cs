@@ -28,16 +28,17 @@ namespace garbage
                 new ModuleAntivirusInstalled(), 
                 new ModuleHomeNetworkEncryption(),
                 new ModuleSecurityPolicyScreenSaver(),
-                new ModuleUACEnabled()
+                new ModuleUACEnabled(),
+                new ModuleAutorunDisabled()
             };
 
-            var ModuleResults = new ModuleResult[Modules.Length];
+            var ModuleResults = new IModuleResult[Modules.Length];
             for (int i = 0; i < Modules.Length; i++)
             {
                 ModuleResults[i] = Modules[i].GetAssessmentResult();
             }
             JObject flast = new JObject();
-            var CategoryResults = new CategoryResult[CategoryInformation.CategoryIDs.Count];
+            var CategoryResults = new ICategoryResult[CategoryInformation.CategoryIDs.Count];
             for (int i = 0; i < CategoryResults.Length; i++)
             {
                 CategoryResults[i] = ICategory.GetCategoryResult(CategoryInformation.CategoryIDs[i]);
@@ -58,15 +59,20 @@ namespace garbage
             string code = Unescape(flast.ToString());
 
             var ce = new CountdownEvent(1);
+
             WebServer ws = new WebServer(x =>
             {
                 ce.Signal();
                 return code;
             }, "http://localhost:19247/data/");
             ws.Run();
+
             Console.WriteLine("Waiting");
-            Thread.Sleep(3000);
+
             ce.Wait();
+            Console.WriteLine("[TRIGGERED]");
+
+            Thread.Sleep(10000);
             ws.Stop();
         }
 

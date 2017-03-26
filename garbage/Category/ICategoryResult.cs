@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BasebandProbe.Category
 {
-    public struct CategoryResult
+    public class ICategoryResult
     {
         public string Name { get; set; }
         public string CategoryID { get; set; }

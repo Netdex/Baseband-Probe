@@ -27,34 +27,6 @@
         </NextSteps>
     </Module>
 
-    <Module name="ModuleWindowsUpdateEnabled">
-        <Name>Windows Updates</Name>
-        <Priority>1</Priority>
-        <Details>
-            Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest
-            vulnerabilities.
-            When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered
-            in the form of updates
-            to secure your system against these vulnerabilities. When updates are disabled, you do not receive this
-            patches.
-        </Details>
-        <NextSteps>
-            <Step result="disabled" score="0">
-                Your Windows Updates are disabled, leaving your system vulnerable to the latest unpatched
-                vulnerabilities.
-                Consider
-                <a href="https://support.microsoft.com/en-us/help/901037/how-to-enable-and-to-disable-microsoft-update">
-                    re-enabling
-                </a>
-                your Windows Updates to receive security patches in the future.
-            </Step>
-            <Step result="enabled" score="100">
-                Your Windows Updates are already enabled, there's nothing to fix here.
-            </Step>
-        </NextSteps>
-    </Module>
-
-
     <Module name="ModulePasswordStorage">
         <Name>Safe Password Storage</Name>
         <Priority>3</Priority>
@@ -156,7 +128,7 @@
         </Details>
         <NextSteps>
             <Step result="has-open" score="60">
-                You have connected to at least one open network in the past, including the following networks: {NETWORK_LIST}. 
+                You have connected to at least one open network in the past. 
                 Although this usually comes with little risk, be wary about carrying out sensitive transactions or transferring 
                 private information across these networks.
             </Step>
@@ -193,7 +165,7 @@
         <Priority>3</Priority>
         <Details>
             Windows has a built-in technology called User Account Control (UAC), which prevents unauthorized changes to
-            your computer by requiring an admin password before makes changes above a certain impact threshold.
+            your computer by requiring an admin password before making changes above a certain impact threshold.
         </Details>
         <NextSteps>
             <Step result="never-notify" score="0">
@@ -208,7 +180,7 @@
                 However, the highest UAC level also asks for confirmation whenever you try to make changes to windows
                 settings. This is a great safety feature to prevent you from accidentally making dangerous changes to
                 Windows. <a href="https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10">
-                    You could turn this feature on follow this guide.</a>
+                    You could turn this feature on following this guide.</a>
             </Step>
 
             <Step result="always-notify" score="100">
@@ -219,7 +191,7 @@
     </Module>
 
     <Module name="ModuleAutorunDisabled">
-        <Name>User Account Control Settings</Name>
+        <Name>Autorun</Name>
         <Priority>3</Priority>
         <Details>
             Autorun is a feature in Windows which allows for devices that you plug into your computer to automatically

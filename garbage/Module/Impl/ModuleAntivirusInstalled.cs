@@ -23,10 +23,10 @@ namespace BasebandProbe.Module.Impl
         public static bool AntivirusInstalled()
         {
 
-            string wmipathstr = @"\\" + Environment.MachineName + @"\root\SecurityCenter";
+            string wmipathstr = @"\\" + Environment.MachineName + @"\root\SecurityCenter2";
             try
             {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher(wmipathstr, "SELECT * FROM AntivirusProduct");
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher(wmipathstr, "SELECT * FROM AntiVirusProduct");
                 ManagementObjectCollection instances = searcher.Get();
                 return instances.Count > 0;
             }
