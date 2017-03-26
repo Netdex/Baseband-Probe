@@ -43,7 +43,6 @@ namespace BasebandProbe.Server
         {
             ThreadPool.QueueUserWorkItem((o) =>
             {
-                Console.WriteLine("Webserver running...");
                 try
                 {
                     while (_listener.IsListening)

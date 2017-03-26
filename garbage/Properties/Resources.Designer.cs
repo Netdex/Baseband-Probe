@@ -67,10 +67,10 @@ namespace BasebandProbe.Properties {
         ///    &lt;Name&gt;Yay&lt;/Name&gt;
         ///  &lt;/Category&gt;
         ///  &lt;Category name=&quot;CategorySecurityPolicies&quot;&gt;
-        ///    
+        ///    &lt;Name&gt;Yay&lt;/Name&gt;
         ///  &lt;/Category&gt;
         ///  &lt;Category name=&quot;CategoryVulnerableBrowsers&quot;&gt;
-        ///    
+        ///    &lt;Name&gt;Yay&lt;/Name&gt;
         ///  &lt;/Category&gt;
         ///&lt;/Categories&gt;.
         /// </summary>
@@ -83,13 +83,15 @@ namespace BasebandProbe.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Modules&gt;
-        ///  &lt;Module name=&quot;ModuleWindowsUpdateEnabled&quot;&gt;
-        ///    &lt;Name&gt;Windows Updates&lt;/Name&gt;
-        ///    &lt;Priority&gt;1&lt;/Priority&gt;
-        ///    &lt;Details&gt;
-        ///		Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest vulnerabilities. 
-        ///		When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered in the form of updates 
-        ///		to secure your system against these vulnerabilities. When updates are  [rest of string was truncated]&quot;;.
+        ///    &lt;Module name=&quot;ModuleWindowsUpdateEnabled&quot;&gt;
+        ///        &lt;Name&gt;Windows Updates&lt;/Name&gt;
+        ///        &lt;Priority&gt;1&lt;/Priority&gt;
+        ///        &lt;Details&gt;
+        ///            Having Windows Updates enabled is essential in keeping your system up to date and secure against the latest
+        ///            vulnerabilities.
+        ///            When a problem is found in Windows that might compromise your security, the vendor creates a patch delivered
+        ///            in the form of updates
+        ///            to [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Modules {
             get {

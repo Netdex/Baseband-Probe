@@ -104,7 +104,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="Firewall">
+    <Module name="ModuleFirewallEnabled">
         <Name>Firewall</Name>
         <Priority>1</Priority>
         <Details>
@@ -124,7 +124,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="drive-encryption">
+    <Module name="ModuleDriveEncrypted">
         <Name>Drive Encryption</Name>
         <Priority>3</Priority>
         <Details>
@@ -146,30 +146,28 @@
         </NextSteps>
     </Module>
 
-    <Module name="home-network-encryption">
-        <Name>Primary Network Encryption</Name>
+    <Module name="ModuleHomeNetworkEncryption">
+        <Name>Network Encryption</Name>
         <Priority>2</Priority>
         <Details>
-            Windows has a built-in manager for different types of networks. This is why when you connect to a new
-            network in Windows, it asks you to classify it as a "Home", "Work" or "Public" network. As Windows uses
-            relaxed data sharing and security settings when you set a network as a "Home Network", it is imperative
-            that these networks are well-secured.
+            When connecting to wireless networks, an important characteristic to look out for is the security of said network.
+            Connecting to networks which are deemed "insecure" or "open" expose your network traffic to potential bad actors on the 
+            same network, compromising your information privacy.
         </Details>
         <NextSteps>
-            <Step result="not-protected" score="0">
-                Your primary network is not encrypted and password protected. Both of these are extremely important to
-                ensuring safe transfer of data over your network. We recommend creating and using a more secure network
-                as your primary connection.
-                <a href="http://www.pcmag.com/article2/0,2817,2375207,00.asp">
-                    Here's a guide to help you out!</a>
+            <Step result="has-open" score="60">
+                You have connected to at least one open network in the past, including the following networks: {NETWORK_LIST}. 
+                Although this usually comes with little risk, be wary about carrying out sensitive transactions or transferring 
+                private information across these networks.
             </Step>
-            <Step result="protected" score="100">
-                Your primary network is using modern encryption and is password protected. Here's to a safe internet!
+            <Step result="no-open" score="100">
+                Suprisingly, you seem to have never connected to an open or insecure network in your entire computer's life. Whether 
+                paranoid, or this is just a new computer, your computer is significantly safer from using only secured networks.
             </Step>
         </NextSteps>
     </Module>
 
-    <Module name="backups">
+    <Module name="ModuleBackupsEnabled">
         <Name>Backup</Name>
         <Priority>2</Priority>
         <Details>
@@ -190,7 +188,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="UAC">
+    <Module name="ModuleUACEnabled">
         <Name>User Account Control Settings</Name>
         <Priority>3</Priority>
         <Details>
@@ -220,7 +218,7 @@
         </NextSteps>
     </Module>
 
-    <Module name="Autorun">
+    <Module name="ModuleAutorunDisabled">
         <Name>User Account Control Settings</Name>
         <Priority>3</Priority>
         <Details>
@@ -249,4 +247,25 @@
             </Step>
         </NextSteps>
     </Module>
+  <Module name="ModuleSecurityPolicyScreenSaver">
+    <Name>Screensaver Timeout</Name>
+    <Priority>4</Priority>
+    <!--<Category>CategorySecurityPolicy</Category>-->
+    <Details>
+      Having a reasonably short lockscreen timeout increases the likelihood that your computer is locked and safe when you are away 
+      from it.
+    </Details>
+    <NextSteps>
+      <Step result="screensaver-good" score="100">
+        You have a good duration for your lockscreen timeout, ensuring your computer is locked when idle and out of use.
+      </Step>
+      <Step result="screensaver-long" score="50">
+        Although you do have a lockscreen timeout setup, its delay is quite long, negating its usefulness. Shorten the length of your timeout. 
+      </Step>
+      <Step result="screensaver-none" score="0">
+        You do not have a lockscreen timeout setup! Set one in your personalization settings to increase the security of your machine.
+        <a href="http://www.windowscentral.com/how-extend-lock-screen-timeout-display-turn-windows-10"></a>
+      </Step>
+    </NextSteps>
+  </Module>
 </Modules>

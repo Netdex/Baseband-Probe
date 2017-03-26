@@ -15,7 +15,9 @@ namespace BasebandProbe.Module.Impl
 
         protected override string AssessModule()
         {
-            
+            if (AntivirusInstalled())
+                return "antivirus-activated";
+            else return "no-antivirus";
         }
 
         public static bool AntivirusInstalled()

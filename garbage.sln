@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "garbage", "garbage\garbage.csproj", "{1B19A9CF-C1B1-4085-AFCC-335DB99AE73A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baseband-Probe", "garbage\Baseband-Probe.csproj", "{1B19A9CF-C1B1-4085-AFCC-335DB99AE73A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

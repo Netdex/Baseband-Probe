@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Xml;
 using BasebandProbe.Category;
 using BasebandProbe.Module;
@@ -22,16 +24,18 @@ namespace garbage
 
             var Modules = new IModule[]
             {
-                new ModuleWindowsUpdateEnabled()
+                new ModuleWindowsUpdateEnabled(),
+                new ModuleAntivirusInstalled(), 
+                new ModuleHomeNetworkEncryption(),
+                new ModuleSecurityPolicyScreenSaver(),
+                new ModuleUACEnabled()
             };
 
             var ModuleResults = new ModuleResult[Modules.Length];
-
             for (int i = 0; i < Modules.Length; i++)
             {
                 ModuleResults[i] = Modules[i].GetAssessmentResult();
             }
-
             JObject flast = new JObject();
             var CategoryResults = new CategoryResult[CategoryInformation.CategoryIDs.Count];
             for (int i = 0; i < CategoryResults.Length; i++)
@@ -45,30 +49,30 @@ namespace garbage
                 arr.Add(JObject.FromObject(i));
             }
             flast["modules"] = arr;
-
             arr = new JArray();
             foreach (var i in CategoryResults)
             {
                 arr.Add(JObject.FromObject(i));
             }
             flast["categories"] = arr;
-
-
             string code = Unescape(flast.ToString());
 
+            var ce = new CountdownEvent(1);
             WebServer ws = new WebServer(x =>
             {
+                ce.Signal();
                 return code;
             }, "http://localhost:19247/data/");
             ws.Run();
-
-            Console.ReadKey();
+            Console.WriteLine("Waiting");
+            Thread.Sleep(3000);
+            ce.Wait();
             ws.Stop();
         }
 
         static string Unescape(string s)
         {
-            return s.Replace("\\r", "").Replace("\\n", "").Replace("\\t", "");
+            return Regex.Replace(s.Replace("\\r\\n", " "), " {2,}", " ");
         }
     }
 }
