@@ -34,8 +34,7 @@
         </Details>
         <NextSteps>
             <Step result="in-browser" score="0">
-                Gordon Guan created a utility that steals all passwords that are saved using your browsers built-in
-                password manager. Third-party password managers such as
+                Third-party password managers such as
                 <a href="https://www.lastpass.com">LastPass</a>
                 or
                 <a href="http://keepass.info/">KeePass</a>
@@ -252,8 +251,9 @@
         Although you do have a lockscreen timeout setup, its delay is quite long, negating its usefulness. Shorten the length of your timeout. 
       </Step>
       <Step result="screensaver-none" score="0">
-        You do not have a lockscreen timeout setup! Set one in your personalization settings to increase the security of your machine.
-        <a href="http://www.windowscentral.com/how-extend-lock-screen-timeout-display-turn-windows-10"></a>
+        You do not have a lockscreen timeout setup!
+        <a href="http://www.windowscentral.com/how-extend-lock-screen-timeout-display-turn-windows-10">
+            Set one in your personalization settings to increase the security of your machine.</a>
       </Step>
     </NextSteps>
   </Module>
